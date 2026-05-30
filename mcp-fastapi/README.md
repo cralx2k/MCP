@@ -11,10 +11,13 @@ pip install -r requirements.txt
 ## Run the API
 
 ```bash
-uvicorn app.api:app --reload
+uvicorn app.api:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-API docs available at: http://localhost:8000/docs
+API docs available at: http://127.0.0.1:8000/docs (local)
+
+From another device on the same network, use:
+`http://<your-ip>:8000/docs`
 
 Data is now persisted locally in SQLite at `local.db`.
 
