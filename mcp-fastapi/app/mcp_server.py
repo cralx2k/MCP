@@ -1,9 +1,12 @@
+import os
 import httpx
 import mcp.types as types
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 
-BASE_URL = "http://localhost:8000"
+BASE_HOST = os.getenv("API_HOST", "127.0.0.1")
+BASE_PORT = os.getenv("API_PORT", "8000")
+BASE_URL = os.getenv("BASE_URL", f"http://{BASE_HOST}:{BASE_PORT}")
 
 server = Server("fastapi-mcp")
 
